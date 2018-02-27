@@ -27,13 +27,10 @@ db.once('open', function () {
 app.use(morgan('combined'));
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use(bodyParser.json({type:'*/*'}));
+app.use(bodyParser.urlencoded({ extended: true })); 
 router(app);
 
 app.set('view engine', 'ejs');
-app.get('/', function(req, res) {
-    console.log(__dirname)
-    //res.render('./pages/index');
-});
 
 //routes(app);
 
