@@ -1,11 +1,22 @@
-'use strict';
+const Auth = require('../controllers/auth');
 
-module.exports = function(app) {
+module.exports = function(app){
     app.get('/', function(req, res) {
-        res.render('pages/index');
+        console.log(__dirname)
+        //res.render('./pages/index');
     });
 
+ 
+   
+}
+
+module.exports = function(app){
     app.get('/about', function(req, res) {
         res.render('pages/about');
     });
-};
+}
+
+
+module.exports = function(app){
+    app.post('/signup', Auth.sighup);
+}
